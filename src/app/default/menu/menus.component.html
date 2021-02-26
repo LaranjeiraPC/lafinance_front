@@ -1,0 +1,20 @@
+<div id="full">
+    <ul class="menu">
+        <li><a [routerLink]="['/dashboard']">
+                <span class="material-icons icons-menu">apps</span>DASHBOARD
+            </a>
+        </li>
+        <li><a [routerLink]="['/acao']">
+                <span class="material-icons icons-menu">home_work</span>AÇÃO
+            </a>
+        </li>
+        <li><a [routerLink]="['/configuracao']" *ngIf="_permissao" >
+                <span class="material-icons icons-menu">format_paint</span>CONFIGURAÇÃO
+            </a>
+        </li>
+        <li><a class="active" [routerLink]="['/configuracao']" (click)="logout()" >
+                <span class="material-icons icons-menu">close</span>SAIR
+            </a>
+        </li>
+    </ul> 
+</div>

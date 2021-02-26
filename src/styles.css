@@ -1,0 +1,155 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html,body { height: 100%; margin: 0px; padding: 0px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+      #full { background: white; height: 100% }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #232735;
+}
+
+.menu{
+    float: left;
+    width: 20%;
+    height: auto; 
+}
+
+li {
+    float: left;
+    width: 100%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: indianred;
+}
+
+.float_right{
+    float: right;
+}
+
+.container{
+    width: 70%;
+    float: left;
+    margin-left: 2.5%;
+}    
+
+table{
+    width: 100%;
+    margin-top: 1%;
+}
+
+tr{
+    text-align: center;
+}
+
+td{
+    color: rgb(41, 41, 41);
+}
+
+th{
+    color: white;
+}
+
+.tr-topo{
+    height: 30px;
+    background: deepskyblue;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.button-editar{
+    background: none;
+    border-color: transparent;
+    color: transparent;
+}
+
+.icon-editar{
+    width: 60%;
+    height: 24px;
+}
+
+.foot{
+    background-color: #333333;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+}
+
+.title{
+    width: 100%;
+    height: 30px;
+    background-color: lightgrey;
+    margin-top: 1%;
+}
+
+.title p{
+    padding: 0.5%;
+    color: black;
+    font-size: 18px;
+    padding-left: 1%;
+}
+
+.button_config{
+    margin-top: 1%;
+    margin-right: 1%;
+    background-color: lightyellow;
+    border: 1px solid grey;
+    width: 10%;
+    border-radius: 3px
+}
+
+.button{
+    border-radius: 3px;
+    border: 0;
+    width: 10%;
+    font-size: 100%;
+    height: 25px;
+    float: right;
+    cursor: pointer;
+    margin-left: 1%;
+}
+
+.button-edit{
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.adicionar{
+    background-color: lightskyblue !important;
+}
+
+html, body { height: 100%; }
+
+.icons-menu{
+    font-size: 18px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spinner{
+    float: left;
+}

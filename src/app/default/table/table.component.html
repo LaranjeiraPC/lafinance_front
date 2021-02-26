@@ -1,0 +1,12 @@
+<table>
+    <tr class="tr-topo">
+        <th id="coluna" *ngFor="let coluna of colunas">{{coluna}}</th>
+        <th id="editar"></th>
+    </tr>
+    <tr *ngFor="let d of data">
+        <td *ngFor="let atributo of atributos">{{d[atributo]}}</td>
+        <td *ngIf="_permissao">
+            <button class="button-edit" (click)="editarRegistro(d)"><span class="material-icons mode">mode</span></button>
+        </td>
+    </tr>
+</table>

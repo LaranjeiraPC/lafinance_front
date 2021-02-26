@@ -1,0 +1,14 @@
+<div class="container">
+
+    <div class="marge-div">
+        <h3 class="titulo-modal-cadastrar">Cadastrar Ativo</h3>
+        <div class="col-g2 btn-fechar" (click)="closedDialog()"></div>
+    </div>
+    
+    <div class="marge-div">
+        <input #campoCadastrar id="campoCadastrar" class="campo-input" placeholder="Ativo" type="text" maxlength="7" (keyup)="verificarCampoAtivo(campoCadastrar.value)" />
+        <button class="button adicionar" (click)="selectCadastrarAtivo()">Salvar</button>
+        <p>{{log}}</p>
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="title"><p>ATIVOS</p></div>
+
+<app-button-painel
+    [indEditar]=false
+    (notifyCadastrar)="falhaPermissao()">
+</app-button-painel>
+
+<app-table 
+    [url]="'acao'"
+    [data]="_acaoList"
+    [colunas]="_colunasList"
+    [atributos]="_atributosList"
+    [colunasEditar]="_colunasEditar"
+    [atributosEditar]="_atributosEditar">
+</app-table>

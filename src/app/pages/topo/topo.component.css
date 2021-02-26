@@ -1,0 +1,14 @@
+.background{
+    background-color: rgb(39, 39, 39);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.titulo{
+    text-align: center;
+    color: floralwhite;
+    font-weight: 500;
+    margin: 4px;
+}

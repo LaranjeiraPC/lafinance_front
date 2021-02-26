@@ -1,0 +1,14 @@
+.alert {
+    padding: 12px;
+    background-color: #f44336;
+    color: white;
+    margin-bottom: 15px;
+    width: 80%;
+    left: 8%;
+    top: 4%;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #2196F3;}

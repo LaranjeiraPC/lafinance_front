@@ -1,0 +1,49 @@
+.btn-fechar {
+    width: 30px;
+    height: 30px;
+    margin-top: 0%;
+    margin-right: 0%;
+    float: right;
+    cursor: pointer;
+    background: url('../../../assets/icons/close-gray.png') no-repeat;
+} 
+
+.titulo-modal-cadastrar{
+    margin-top: 0%;
+    color: #0082ad;
+    font-family: "Caecilia LT Std";	
+    font-size: 20px;	
+    line-height: 24px;
+    float: left;
+}
+
+.container {
+    float: left;
+    width: 94%;
+    height: 0 auto;
+    background-color: white;
+}
+
+.marge-div{
+    width: 100%;
+    float: left;
+}
+
+.campo-input{
+    float: left;
+    width: 30%;
+    height: 30px;
+}
+
+button{
+    width: 25%;
+    background-color: skyblue;
+    height: 35px;
+    border: transparent;
+}
+
+p{
+    float: left;
+    width: 100%;
+    color: red;
+}
