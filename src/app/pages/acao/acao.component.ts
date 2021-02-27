@@ -24,18 +24,20 @@ export class AcaoComponent implements OnInit {
 
   usuarioSubscription: Subscription = new Subscription;
   acaoSubscription: Subscription = new Subscription;
+  spinnerSubscription: Subscription = new Subscription;
   subscription: Subscription = new Subscription;
 
   constructor(
     private _acaoService: AcaoService,
+    private _spinnerService: SpinnerService,
     private _usuarioService: UsuarioService,
     public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
-
-    this.acaoSubscription = this._acaoService.get().subscribe(data => {
-      if(data){
+    this._spinnerService.setAlert("CARREGANDO", null, false);
+    this.spinnerSubscription = this._spinnerService.get().subscribe(data => {
+      if(data.refresh){
         setTimeout(() =>{
           this.consultarCliente(this._usuario);
         },1000);
@@ -52,21 +54,23 @@ export class AcaoComponent implements OnInit {
     let subscription = this._acaoService.consultarListAcoes(usuario).subscribe(data => {
       subscription.unsubscribe();
       this._acaoList = data;
-      //this._spinnerService.setStatusSpinner(false);
+      console.log(this._acaoList);
       this.montarDadosTabela();
     });
   }
 
   montarDadosTabela(){
-    this._colunasList = ['Nome', 'Habilitado'];
+    this._colunasList = ['Nome', 'Habilitado', 'Editar', 'Excluir'];
     this._atributosList = ['nomeAcao', 'ativoAcao'];
+    this._colunasEditar = ['Nome', 'Habilitado'];
+    this._atributosEditar = ['nomeAcao', 'ativoAcao'];
   }
 
-  falhaPermissao() {
+  inserirAtivo() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.height = '0 auto';
-    dialogConfig.width = "30%";
+    dialogConfig.width = "25%";
     dialogConfig.data = {
       ativosList: this._acaoList,
       usuario: this._usuario

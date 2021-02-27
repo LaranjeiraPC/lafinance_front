@@ -18,6 +18,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatDatepickerModule, MatNativeDateModule, MatTableModule, MatSortModule, MatButtonModule, MatTabsModule, MatButtonToggleModule, MatCheckboxModule, MatIconModule, MatTooltipModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PainelMensagemComponent } from './default/painel-mensagem/painel-mensagem.component';
+import { AcaoExcluirModalComponent } from './modal/acao-excluir-modal/acao-excluir-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SpinnerComponent,
     ButtonPainelComponent,
     AcaoInserirModalComponent,
+    PainelMensagemComponent,
+    AcaoExcluirModalComponent,
   ], 
   imports: [
     BrowserModule,
@@ -57,6 +61,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  entryComponents: [AcaoInserirModalComponent]
+  entryComponents: [
+    AcaoInserirModalComponent,
+    AcaoExcluirModalComponent]
 })
 export class AppModule { }

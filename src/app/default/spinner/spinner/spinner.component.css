@@ -3,11 +3,12 @@
     background-color: #f44336;
     color: white;
     margin-bottom: 15px;
-    width: 80%;
-    left: 8%;
-    top: 4%;
+    width: 25%;
+    right: 2%;
+    top: 6%;
     position: absolute;
     border-radius: 10px;
+    z-index: 5;
 }
 
 .alert.success {background-color: #4CAF50;}

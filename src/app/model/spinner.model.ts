@@ -2,6 +2,14 @@ export class Spinner{
 
     private _message: string = ""; 
     private _status: string = ""; 
+    private _refresh: boolean = false;
+    
+    public get refresh(): boolean {
+        return this._refresh;
+    }
+    public set refresh(value: boolean) {
+        this._refresh = value;
+    }
 
     public get status(): string {
         return this._status;

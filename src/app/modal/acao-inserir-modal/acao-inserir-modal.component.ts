@@ -32,6 +32,7 @@ export class AcaoInserirModalComponent implements OnInit {
   { }
 
   ngOnInit(): void {
+    
     if(this.data) {
       this.ativosList = this.data.ativosList;
       this.usuario = this.data.usuario
@@ -51,23 +52,20 @@ export class AcaoInserirModalComponent implements OnInit {
   selectCadastrarAtivo(){
     this.validarExistenciaAtivo();
 
-    if(!this.ativoExistente){
+    if(this.ativoExistente){
+      this.log = "Ativo já cadastrado!";
+    }else{
       this.acaoList.push("A");
       this.acaoList.push(this._campoCadastrar);
       this.acaoList.push(this.usuario);
-  
       this.salvarAtivo();
     }
-    
   }
 
   validarExistenciaAtivo(){
     for (let ativoExistente of this.ativosList) {
       if (ativoExistente.nomeAcao == this._campoCadastrar) {
-        this.log = "Ativo já cadastrado!";
         this.ativoExistente = true;
-      }else{
-        this.ativoExistente = false;
       }
     }
   }
@@ -75,10 +73,13 @@ export class AcaoInserirModalComponent implements OnInit {
   salvarAtivo(){
     let subscription = this._acaoService.salvarAtivo(this.acaoList).subscribe(data => {
       subscription.unsubscribe();
-     //this.spinnerService.setAlert("SUCESSO", data.error.error.text);
+      if(data.tipo == "SUCESSO"){
+        this.spinnerService.setAlert(data.tipo, data.mensagem, true);
+      }else{
+        this.spinnerService.setAlert(data.tipo, data.mensagem, false);
+      }
     });
     
-    this._acaoService.setAtualizarTela(true);
     this.closedDialog();
   }
 

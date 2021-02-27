@@ -1,3 +1,11 @@
-<div *ngIf="_enable" [ngClass]="(_status == 'SUCESSO')? 'alert success' : 'alert' ">
+<div *ngIf="_enable && _status == 'SUCESSO'" [ngClass]="(_status == 'SUCESSO')? 'alert success' : '' ">
+    <strong>{{_status}}!</strong> {{_message}} 
+</div>
+
+<div *ngIf="_enable && _status == 'ERRO'" [ngClass]="(_status == 'ERRO')? 'alert' : '' ">
+    <strong>{{_status}}!</strong> {{_message}} 
+</div>
+
+<div *ngIf="_enable && _status == 'CARREGANDO'" [ngClass]="(_status == 'CARREGANDO')? 'alert info' : '' ">
     <strong>{{_status}}!</strong> {{_message}} 
 </div>

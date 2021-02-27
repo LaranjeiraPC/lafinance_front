@@ -1,5 +1,5 @@
 <div *ngIf="_logado">
-    <!-- <app-alert></app-alert> -->
+    <div class="spinner"><app-spinner></app-spinner></div>
     <!-- <app-logo></app-logo> -->
     <app-topo></app-topo>
     <app-menus></app-menus>
@@ -7,9 +7,7 @@
     <div class="container">
         <router-outlet></router-outlet> 
     </div>
-    <div class="foot">
-        <div class="spinner"><app-spinner></app-spinner></div>
-    </div>
+    <div class="foot"></div>
 
 </div>
 

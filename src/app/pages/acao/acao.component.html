@@ -2,7 +2,7 @@
 
 <app-button-painel
     [indEditar]=false
-    (notifyCadastrar)="falhaPermissao()">
+    (notifyCadastrar)="inserirAtivo()">
 </app-button-painel>
 
 <app-table 
@@ -11,5 +11,6 @@
     [colunas]="_colunasList"
     [atributos]="_atributosList"
     [colunasEditar]="_colunasEditar"
-    [atributosEditar]="_atributosEditar">
+    [atributosEditar]="_atributosEditar"
+    [indicadorExcluir]=true>
 </app-table>

@@ -1,12 +1,24 @@
-<table>
-    <tr class="tr-topo">
-        <th id="coluna" *ngFor="let coluna of colunas">{{coluna}}</th>
-        <th id="editar"></th>
-    </tr>
-    <tr *ngFor="let d of data">
-        <td *ngFor="let atributo of atributos">{{d[atributo]}}</td>
-        <td *ngIf="_permissao">
-            <button class="button-edit" (click)="editarRegistro(d)"><span class="material-icons mode">mode</span></button>
-        </td>
-    </tr>
-</table>
+<div *ngIf="data.length != 0">
+    <table>
+        <tr class="tr-topo">
+            <th id="coluna" *ngFor="let coluna of colunas" [ngClass]="(coluna == 'Editar' || coluna == 'Excluir') ? 'ferramentas' : '' ">{{coluna}}</th>
+        </tr>
+    
+        <tr *ngFor="let d of data">
+            <td *ngFor="let atributo of atributos">{{d[atributo]}}</td>
+            <td *ngIf="_permissao">
+                <button class="button-edit" (click)="editarRegistro(d)"><span class="material-icons mode">mode</span></button>
+            </td>
+            <td *ngIf="_permissao">
+                <button class="button-edit" (click)="excluirRegistro(d)"><span class="material-icons delete">delete</span></button>
+            </td>
+        </tr>  
+        
+    </table>
+</div>
+
+<div *ngIf="data.length == 0">
+    <app-painel-mensagem
+        [mensagem]="'Nenhum registro encontrado na base de dados!'">
+    </app-painel-mensagem>
+</div>
