@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,9 +18,17 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatDatepickerModule, MatNativeDateModule, MatTableModule, MatSortModule, MatButtonModule, MatTabsModule, MatButtonToggleModule, MatCheckboxModule, MatIconModule, MatTooltipModule } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PainelMensagemComponent } from './default/painel-mensagem/painel-mensagem.component';
 import { AcaoExcluirModalComponent } from './modal/acao-excluir-modal/acao-excluir-modal.component';
+import { InvestimentosComponent } from './pages/investimentos/investimentos.component';
+import { CompraInserirModalComponent } from './modal/compra-inserir-modal/compra-inserir-modal.component';
+import { CompraEditarModalComponent } from './modal/compra-editar-modal/compra-editar-modal.component';
+import { CompraExcluirModalComponent } from './modal/compra-excluir-modal/compra-excluir-modal.component';
+import { VendaInserirModalComponent } from './modal/venda-inserir-modal/venda-inserir-modal.component';
+import { VendaEditarModalComponent } from './modal/venda-editar-modal/venda-editar-modal.component';
+import { VendaExcluirModalComponent } from './modal/venda-excluir-modal/venda-excluir-modal.component';
+import { CardComponent } from './default/card/card.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +44,14 @@ import { AcaoExcluirModalComponent } from './modal/acao-excluir-modal/acao-exclu
     AcaoInserirModalComponent,
     PainelMensagemComponent,
     AcaoExcluirModalComponent,
+    InvestimentosComponent,
+    CompraInserirModalComponent,
+    CompraEditarModalComponent,
+    CompraExcluirModalComponent,
+    VendaInserirModalComponent,
+    VendaEditarModalComponent,
+    VendaExcluirModalComponent,
+    CardComponent,
   ], 
   imports: [
     BrowserModule,
@@ -42,7 +59,7 @@ import { AcaoExcluirModalComponent } from './modal/acao-excluir-modal/acao-exclu
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
-
+    FormsModule,
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -63,6 +80,9 @@ import { AcaoExcluirModalComponent } from './modal/acao-excluir-modal/acao-exclu
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   entryComponents: [
     AcaoInserirModalComponent,
-    AcaoExcluirModalComponent]
+    AcaoExcluirModalComponent,
+    CompraInserirModalComponent,
+    CompraEditarModalComponent,
+    CompraExcluirModalComponent]
 })
 export class AppModule { }

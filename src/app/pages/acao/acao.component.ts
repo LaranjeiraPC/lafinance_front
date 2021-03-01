@@ -40,7 +40,7 @@ export class AcaoComponent implements OnInit {
       if(data.refresh){
         setTimeout(() =>{
           this.consultarCliente(this._usuario);
-        },1000);
+        },200);
       }
     });
 
@@ -54,7 +54,6 @@ export class AcaoComponent implements OnInit {
     let subscription = this._acaoService.consultarListAcoes(usuario).subscribe(data => {
       subscription.unsubscribe();
       this._acaoList = data;
-      console.log(this._acaoList);
       this.montarDadosTabela();
     });
   }

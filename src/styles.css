@@ -61,7 +61,7 @@ li a:hover:not(.active) {
 
 .containe-modal {
     float: left;
-    width: 94%;
+    width: 100%;
     height: 0 auto;
     background-color: white;
 }
@@ -123,6 +123,34 @@ tr:nth-child(even) {
     color: black;
     font-size: 18px;
     padding-left: 1%;
+}
+
+
+.sub-title{
+    width: 100%;
+    background-color: rgb(204, 204, 204);
+    margin-top: 1%;
+    float: left;
+}
+
+.sub-title p{
+    margin: 7px;
+    color: black;
+    font-size: 14px;
+    padding-left: 1%;
+}
+
+.painel{
+    width: 100%;
+    float: left; 
+}
+
+.on{
+    background-color: rgb(131, 220, 250);
+}
+
+.close{
+    background-color: rgb(131, 250, 204);
 }
 
 .button_config{

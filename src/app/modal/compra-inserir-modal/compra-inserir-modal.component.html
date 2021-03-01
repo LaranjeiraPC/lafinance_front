@@ -1,0 +1,40 @@
+<div class="containe-modal">
+
+    <div class="marge-div">
+        <h3 class="titulo-modal-cadastrar">Cadastrar Compra</h3>
+        <div class="col-g2 btn-fechar" (click)="closedDialog()"></div>
+    </div>
+    
+    <div class="marge-div">
+        <input #campoAtivo *ngIf="indAtivo" id="campoAtivo" class="campo-input" placeholder="" type="text" maxlength="7" (keyup)="verificarCampoAtivo(campoAtivo.value)" />
+        <input #campoQtd *ngIf="indQtd" id="campoQtd" class="campo-input" placeholder="Quantidade" type="text" maxlength="99999" (keyup)="verificarCampoQtd(campoQtd.value)" />
+        <input #campoVlrCompra *ngIf="indVlrCompra" id="campoVlrCompra" class="campo-input" placeholder="Valor Compra" type="text" maxlength="9999999" (keyup)="verificarCampoVlrCompra(campoVlrCompra.value)" />
+        <input #campoTotal *ngIf="indTotal" id="campoTotal" class="campo-input" placeholder="Valor Total" type="text" maxlength="9999999" (keyup)="verificarCampoTotal(campoTotal.value)" />
+        <input #campoData *ngIf="indData" id="campoData" class="campo-input" placeholder="Data Compra" type="date" maxlength="10" (keyup)="verificarCampoData(campoAtivo.value)" /> 
+        
+        <div *ngIf="indReview">
+            <div class="painel-review">
+                <p class="desc">Ativo:</p><p class="review">{{_campoAtivo}}</p>
+            </div>
+            <div class="painel-review">
+                <p class="desc">Quantidade:</p><p class="review">{{_campoQtd}}</p>
+            </div>
+            <div class="painel-review">
+                <p class="desc">Vlr. Ativo:</p><p class="review">{{_campoVlrCompra}}</p>
+            </div>
+            <div class="painel-review">
+                <p class="desc">Total:</p><p class="review">{{_campoTotal}}</p>
+            </div>
+            <div class="painel-review">
+                <p class="desc">Data Compra:</p><p class="review">{{_campoData}}</p>
+            </div>
+        </div>
+        
+        <div class="painel-button">
+            <button *ngIf="indBotSalvar" class="button adicionar" (click)="cadastrarCompra()">Salvar</button>
+            <button *ngIf="indBotProximo" class="button adicionar" (click)="proximo()">Próximo</button>
+            <button *ngIf="indBotVoltar" class="button cancelar" (click)="voltar()">Voltar</button>            
+        </div>
+    </div>
+
+</div>
