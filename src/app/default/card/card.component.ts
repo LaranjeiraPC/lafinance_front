@@ -8,7 +8,9 @@ import { Acao } from 'src/app/model/acao.model';
 })
 export class CardComponent implements OnInit {
 
-  @Input() ativo: Acao[] = [];
+  @Input() ativo: Acao;
+  @Input() quantidade: number;
+  @Input() valorUnitario: number;
 
   constructor() { }
 

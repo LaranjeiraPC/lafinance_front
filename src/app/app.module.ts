@@ -17,7 +17,7 @@ import { AcaoInserirModalComponent } from './modal/acao-inserir-modal/acao-inser
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatDatepickerModule, MatNativeDateModule, MatTableModule, MatSortModule, MatButtonModule, MatTabsModule, MatButtonToggleModule, MatCheckboxModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { MatInputModule, MatDatepickerModule, MatNativeDateModule, MatTableModule, MatSortModule, MatButtonModule, MatTabsModule, MatButtonToggleModule, MatCheckboxModule, MatIconModule, MatTooltipModule, MatFormFieldModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PainelMensagemComponent } from './default/painel-mensagem/painel-mensagem.component';
 import { AcaoExcluirModalComponent } from './modal/acao-excluir-modal/acao-excluir-modal.component';
@@ -29,6 +29,8 @@ import { VendaInserirModalComponent } from './modal/venda-inserir-modal/venda-in
 import { VendaEditarModalComponent } from './modal/venda-editar-modal/venda-editar-modal.component';
 import { VendaExcluirModalComponent } from './modal/venda-excluir-modal/venda-excluir-modal.component';
 import { CardComponent } from './default/card/card.component';
+import { DataBRPipe } from './pipe/data-br.pipe';
+import { MoedaPipe } from './pipe/moeda.pipe';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { CardComponent } from './default/card/card.component';
     VendaEditarModalComponent,
     VendaExcluirModalComponent,
     CardComponent,
+    DataBRPipe,
+    MoedaPipe,
   ], 
   imports: [
     BrowserModule,
@@ -67,15 +71,14 @@ import { CardComponent } from './default/card/card.component';
     MatSortModule,
     MatButtonModule,
     MatTabsModule,
-    MatInputModule,
-    MatDialogModule,
     MatTooltipModule,
     MatIconModule,
     MatButtonToggleModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
   ],
-  providers: [],
+  providers: [MoedaPipe],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   entryComponents: [

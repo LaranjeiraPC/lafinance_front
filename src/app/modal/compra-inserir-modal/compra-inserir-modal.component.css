@@ -54,6 +54,21 @@ p{
     color: red;
 }
 
+.title {
+    float: left;
+    width: 26%;
+    color: black;
+    height: 40px;
+    margin-top: 2%;
+    background-color: white;
+    padding: 2%;
+}
+
+.marge-div-ind{
+    width: 100%;
+    float: left;
+}
+
 .painel-review{
     width: 100%;
     float: left;
@@ -67,4 +82,8 @@ p{
 .review{
     width: 40%;
     color: black;
+}
+
+.direction{
+    direction:RTL
 }

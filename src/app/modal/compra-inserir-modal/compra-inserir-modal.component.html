@@ -6,11 +6,18 @@
     </div>
     
     <div class="marge-div">
-        <input #campoAtivo *ngIf="indAtivo" id="campoAtivo" class="campo-input" placeholder="" type="text" maxlength="7" (keyup)="verificarCampoAtivo(campoAtivo.value)" />
-        <input #campoQtd *ngIf="indQtd" id="campoQtd" class="campo-input" placeholder="Quantidade" type="text" maxlength="99999" (keyup)="verificarCampoQtd(campoQtd.value)" />
-        <input #campoVlrCompra *ngIf="indVlrCompra" id="campoVlrCompra" class="campo-input" placeholder="Valor Compra" type="text" maxlength="9999999" (keyup)="verificarCampoVlrCompra(campoVlrCompra.value)" />
-        <input #campoTotal *ngIf="indTotal" id="campoTotal" class="campo-input" placeholder="Valor Total" type="text" maxlength="9999999" (keyup)="verificarCampoTotal(campoTotal.value)" />
-        <input #campoData *ngIf="indData" id="campoData" class="campo-input" placeholder="Data Compra" type="date" maxlength="10" (keyup)="verificarCampoData(campoAtivo.value)" /> 
+
+        <div class="marge-div-ind" *ngIf="indAtivo"><p class="title">ATIVO:</p>
+            <select #campoAtivo class="campo-input" (change)="verificarCampoAtivo(campoAtivo.value)">
+                <option></option>
+                <option *ngFor="let acao of _acaoList">{{acao.nomeAcao}}</option>  
+            </select>
+        </div>
+
+        <div class="marge-div-ind" *ngIf="indQtd"><p class="title">QUANTIDADE:</p><input #campoQtd *ngIf="indQtd" id="campoQtd" class="campo-input" placeholder="0" type="text" maxlength="99999" (keyup)="verificarCampoQtd(campoQtd.value)" /></div>
+        <div class="marge-div-ind" *ngIf="indVlrCompra"><p class="title">VLR. COMPRA:</p><input #campoVlrCompra [value]="_campoVlrCompra | moeda" *ngIf="indVlrCompra" id="campoVlrCompra" class="campo-input" placeholder="0,00" type="text" maxlength="7" (keyup)="verificarCampoVlrCompra(campoVlrCompra.value)" /></div>
+        <div class="marge-div-ind" *ngIf="indTotal"><p class="title">TOTAL:</p><input #campoTotal [value]="_campoTotal | moeda" disabled *ngIf="indTotal" id="campoTotal" class="campo-input" placeholder="Valor Total" type="text" maxlength="9999999" (keyup)="verificarCampoTotal(campoTotal.value)" /></div>
+        <div class="marge-div-ind" *ngIf="indData"><p class="title">DATA COMPRA:</p><input #campoData [value]="_campoData | dataBR" *ngIf="indData" id="campoData" class="campo-input" type="text" maxlength="10" (keyup)="verificarCampoData(campoData.value)" /> </div>
         
         <div *ngIf="indReview">
             <div class="painel-review">
@@ -23,7 +30,7 @@
                 <p class="desc">Vlr. Ativo:</p><p class="review">{{_campoVlrCompra}}</p>
             </div>
             <div class="painel-review">
-                <p class="desc">Total:</p><p class="review">{{_campoTotal}}</p>
+                <p class="desc">Total:</p><p class="review">{{_campoTotal | moeda}}</p>
             </div>
             <div class="painel-review">
                 <p class="desc">Data Compra:</p><p class="review">{{_campoData}}</p>

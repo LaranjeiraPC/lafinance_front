@@ -8,16 +8,11 @@
 <div class="sub-title"><p>Ativos</p></div>
 
 <div class="painel on">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    <app-card *ngFor="let compraAtiva of _compraList"
+        [ativo]="compraAtiva.acao.nomeAcao"
+        [quantidade]="compraAtiva.quantidade"
+        [valorUnitario]="compraAtiva.ultimoValorCompra"
+    ></app-card>
 </div>
 
 <div class="sub-title"><p>Fechados</p></div>
